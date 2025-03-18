@@ -129,7 +129,7 @@ if st.button("Compute"):
                 minimal_extension = get_minimal_linear_extension(input_vectors)
                 st.subheader("Minimal Linear Extension (All Codewords in the Span)")
                 for vec in minimal_extension:
-                    st.write(vec)
+                    st.write(tuple(map(int, vec)))
                 
                 # 2) Construct the generator matrix from the minimal extension
                 G = get_generator_matrix(minimal_extension)
@@ -152,9 +152,9 @@ if st.button("Compute"):
                     st.subheader("Generated Codewords from All Possible Messages")
                     for msg_int in range(2**k):
                         msg = [(msg_int >> i) & 1 for i in range(k)]
-                        msg = np.array(msg[::-1])
+                        msg = np.array(msg[::-1])  # Reverse for proper ordering
                         codeword = generated_codewords[tuple(msg)]
-                        st.write(f"Message = {tuple(msg)}  -->  Codeword = {codeword}")
+                        st.write(f"Message = {tuple(map(int, msg))}  -->  Codeword = {tuple(map(int, codeword))}")
             
     except Exception as e:
         st.error(f"An error occurred: {e}")
