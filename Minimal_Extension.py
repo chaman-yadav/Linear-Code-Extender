@@ -99,7 +99,7 @@ m = st.number_input("Enter the size of each vector:", min_value=1, step=1, value
 
 st.markdown("### Input Vectors")
 st.markdown("Enter one vector per line. Separate elements with spaces.")
-vectors_input = st.text_area("Vectors:", value="1 0 0 1\n0 1 0 0\n0 0 0 1\n0 0 0\n0 0 1 1")
+vectors_input = st.text_area("Vectors:", value="1 0 0 1\n0 1 0 0\n0 0 0 1\n0 0 1 1")
 
 if st.button("Compute"):
     try:
