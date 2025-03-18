@@ -8,7 +8,8 @@ def get_minimal_linear_extension(vectors):
     for a set of binary vectors over GF(2).
     """
     n = len(vectors[0])
-    span_set = set(vectors)  # Start with the original vectors
+    # span_set = set(vectors)  # Start with the original vectors
+    span_set = set(tuple(map(int, vec)) for vec in vectors)
 
     # Generate all possible linear combinations using XOR (GF(2) addition)
     for r in range(1, len(vectors) + 1):
