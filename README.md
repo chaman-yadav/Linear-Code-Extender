@@ -29,6 +29,7 @@ This application is deployed on Streamlit Cloud and publicly available at:
 - Python 3.x
 - Streamlit
 - NumPy
+- itertools
 
 ## Installation
 
